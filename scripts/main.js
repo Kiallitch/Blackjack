@@ -9,9 +9,11 @@
    write your logic.
 */
 
-var hand = ["ace", "2", "3", "4", "5", "6", "7", "8", "9", "10", "jack", "queen", "king"];
+ let hand = Math.floor(Math.random()*52+1);
+return hand;
 
 function handValue (hand) {
+
   if (output == "jack" || "queen" || "king") {
           return [10];
       } else if (output == "ace") {

@@ -9,20 +9,24 @@
    write your logic.
 */
 
- let hand = Math.floor(Math.random()*52+1);
-return hand;
-
-function handValue (hand) {
-
-  if (output == "jack" || "queen" || "king") {
-          return [10];
-      } else if (output == "ace") {
-          return [1, 11];
-      } else {
-          return parseInt(output, 10);
-      }
-  };
-
+function handValue(hand) {
+  let value = 0
+  for (var i = 0; i < hand.length; i++) {
+      if (hand[i] == "2" || hand[i] == "3" || hand[i] == "4" || hand[i] == "5" || hand[i] == "6" || hand[i] == "7" || hand[i] == "8" || hand[i] == "9" || hand[i] == "10") {
+      value += parseInt(hand[i]);
+    } else if (hand[i] == "J" || hand[i] == "Q" || hand[i] == "K") {
+      value += 10;
+    }
+ }
+  for (i = 0; i < hand.length; i++) {
+      if (hand[i] == "A" && value < 11) {
+      value += 11;
+    } else if (hand[i] == "A" && value > 11) {
+      value += 1;
+    }
+ }
+  return value
+}
 
 /* -----  Hints ------
 
